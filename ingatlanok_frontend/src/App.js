@@ -27,6 +27,7 @@ const [ar, setAr] = useState(0);
 const [kepURL, setKepURL] = useState("");
 const [ingatlanok, setIngatlanok] = useState([]);
 const [ujHirdetes, setUjHirdetes] = useState({kategoria: kategoria, leiras: leiras, hirdetesDatuma: hirdetesDatuma, tehermentes: tehermentes, ar: ar, kepURL: kepURL});
+const [message, setMessage] = useState("");
 
 
 
@@ -62,6 +63,7 @@ function dataChange(event) {
 
 function kuld(){
   let data = {kategoria: parseInt(kategoria), leiras: leiras, hirdetesDatuma: hirdetesDatuma, tehermentes: tehermentes, ar: parseInt(ar), kepURL: kepURL}
+  setMessage("Sikeresen létrehoztad az új hirdetést!")
   UserService.postData("ingatlanok", data)
 }
 
@@ -93,7 +95,13 @@ function kuld(){
         </table>
       </div>
       <div className="uj">
-
+      {message.length > 1 ? (
+        <div className="alert alert-success" role="alert">
+          {message}
+        </div>
+      ) : (
+        <div></div>
+      )}
       <div className="col-xs-12" >
         <label htmlFor="leiras"  className="form-label">
           Ingatlan kategóriája

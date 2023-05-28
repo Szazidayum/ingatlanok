@@ -29,6 +29,7 @@ function Ingatlan(props){
 
     return(
         <>
+        
         <tr>
       <td className="align-middle">{props.ingatlan.kategoria}</td>
       <td className="align-middle">{props.ingatlan.leiras}</td>
