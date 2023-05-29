@@ -70,8 +70,8 @@ function kuld(){
   return (
     <div className="App">
       <h1>Ajánlataink</h1>
-      <div className="table-responsive">
-        <table className="table">
+      {/* <div className="table-responsive"> */}
+        {/* <table className="table">
           <thead className="table-thead">
             <tr>
               <th scope="col">Kategória</th>
@@ -92,8 +92,35 @@ function kuld(){
               );
             })}
           </tbody>
-        </table>
+        </table> */}
+        <div className='container'>
+        {/* <thead className="table-thead">
+        <tr> */}
+        <div className='row head' style={{border:"1px solid grey"}}>
+              <div className="col">Kategória</div>
+              <div className="col">Leírás</div>
+              <div className="col">Hirdetés dátuma</div>
+              <div className="col">Tehermentes</div>
+              <div className="col">Fénykép</div>
+              <div className="col">Törlés</div>
+              <div className="col">Érdekel</div>
+              </div>
+            {/* </tr>
+          </thead> */}
+          <div className='row justify-content-md-center sor'>
+          {ingatlanok.map((ingatlan, index) => {
+              return (
+                <div className='col col-12 haz'  style={{border:"1px solid grey"}}>
+                <Ingatlan
+                ingatlan={ingatlan}
+                  key={index}
+                /></div>
+                
+              );
+            })}
+            </div>
       </div>
+
       <div className="uj">
       {message.length > 1 ? (
         <div className="alert alert-success" role="alert">

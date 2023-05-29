@@ -28,11 +28,97 @@
   color: #61dafb;
 }
 
+.row.ingatlanDiv{
+
+  align-items: center;
+}
+
+.row.ingatlanDiv.col{
+  width: 14.28%;
+
+}
+.row.head.col{
+  width: 14.28%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  body {
+    background-color: rgb(173, 228, 230);
+  }
+
+  .row.sor{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
+  }
+
+  .col.haz{
+    background-color: white;
+    width: 300px;
+  }
+  .row.ingatlanDiv{
+    display: grid;
+    grid-template-areas: "kat kat date"
+                        "leir leir leir"
+                        "kep kep kep"
+                        "teher teher teher"
+                        "delet delet erdekel";
+  }
+  .col.kat{
+    text-align: left;
+    color: #ffffff;
+    width: 100%;
+    grid-area: kat;
+    background-color: grey;
+  }
+  .col.date{
+    text-align: right;
+    color: #ffffff;
+    width: 100%;
+    grid-area: date;
+    background-color: grey;
+  }
+  .col.leiras{
+    width: 100%;
+    grid-area: leir;
+  }
+  .col.teher{
+    visibility: hidden;
+    width: 100%;
+    grid-area: teher;
+  }
+  .col.kep{
+    width: 100%;
+    grid-area: kep;
+  }
+  .col.delet{
+    width: 100%;
+    grid-area: delet;
+    
+  }
+  .col.erdekel{
+    width: 100%;
+    grid-area: erdekel;
+    
+  }
+  .row.head{
+    visibility: hidden;
+  }
+}
+@media only screen and (max-width: 740px) {
+  
+  .row.sor{
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 20px;
   }
 }

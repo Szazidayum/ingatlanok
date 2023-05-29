@@ -17,7 +17,8 @@ class UserService {
   }
 
   deleteData(api) {
-    return axios.delete(API_URL + api)
+    return axios.delete(API_URL + api).then(response => {
+    })
   }
 
 }
